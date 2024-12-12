@@ -124,7 +124,7 @@ class ComplexType(AnyType):
         for name, element in self.elements_nested:
             if isinstance(element, Element):
                 result.append((element.attr_name, element))
-            else:
+            elif element is not None:
                 result.extend(element.elements)
         return result
 
